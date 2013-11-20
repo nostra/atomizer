@@ -1,0 +1,11 @@
+<project>
+    <!-- Please do not modify this file. Modify the super-pom -->
+    <body>
+        <!--menu name="Atomizer">
+            <item name="Liquibase" href="/liquibase.html"/>
+            <item name="Rest" href="/rest.html"/>
+            <item name="Desktop Notification" href="/notification.html"/>
+        </menu-->
+    <menu name="modules" />
+  </body>
+</project>
