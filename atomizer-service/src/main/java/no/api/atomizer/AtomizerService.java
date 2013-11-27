@@ -1,15 +1,6 @@
 package no.api.atomizer;
 
 import com.mongodb.DB;
-import com.wordnik.swagger.config.ConfigFactory;
-import com.wordnik.swagger.config.ScannerFactory;
-import com.wordnik.swagger.config.SwaggerConfig;
-import com.wordnik.swagger.jaxrs.config.DefaultJaxrsScanner;
-import com.wordnik.swagger.jaxrs.listing.ApiDeclarationProvider;
-import com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON;
-import com.wordnik.swagger.jaxrs.listing.ResourceListingProvider;
-import com.wordnik.swagger.jaxrs.reader.DefaultJaxrsApiReader;
-import com.wordnik.swagger.reader.ClassReaders;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
@@ -59,27 +50,5 @@ public class AtomizerService extends Service<AtomizerConfiguration> {
         environment.addResource(new SearchForGroupResource(staleGroupMongoDao, counterMongoDao));
         environment.addResource(new AtomResource(staleGroupMongoDao));
         environment.addResource(new MetaCounterResource(counterMongoDao));
-
-        addSwaggger( environment );
-    }
-
-    private void addSwaggger(Environment environment) {
-        // Swagger Resource
-        environment.addResource(new ApiListingResourceJSON());
-
-        // Swagger providers
-        environment.addProvider(new ApiDeclarationProvider());
-        environment.addProvider(new ResourceListingProvider());
-
-        // Swagger Scanner, which finds all the resources for @Api Annotations
-        ScannerFactory.setScanner(new DefaultJaxrsScanner());
-
-        // Add the reader, which scans the resources and extracts the resource information
-        ClassReaders.setReader(new DefaultJaxrsApiReader());
-
-        // Set the swagger config options
-        SwaggerConfig config = ConfigFactory.config();
-        config.setApiVersion("1.0.3");
-        // Hope not to set base path: config.setBasePath("http://localhost:8000");
     }
 }

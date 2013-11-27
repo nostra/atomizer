@@ -1,7 +1,6 @@
 package no.api.atomizer.mongodb.dao;
 
 import com.mongodb.DB;
-import com.wordnik.swagger.annotations.ApiModel;
 import no.api.atomizer.core.MetaCounter;
 import org.mongojack.DBCursor;
 import org.mongojack.DBQuery;
@@ -19,7 +18,6 @@ import java.util.List;
 /**
  *
  */
-@ApiModel(value = "Counting an element")
 @XmlRootElement(name = "Counter")
 public final class MetaCounterMongoDao {
     private static final Logger log = LoggerFactory.getLogger(MetaCounterMongoDao.class);
