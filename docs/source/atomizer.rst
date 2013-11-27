@@ -31,9 +31,9 @@ should be a matter of::
 You would run the application jar like this from the source build
 directory::
 
-    java -jar *-service/target/a*-service-*-SNAPSHOT.jar \
+    java -jar *-service/target/a*-SNAPSHOT.jar \
               server \
-              *-app/src/main/resources/etc/dropwizard.yml
+             *-service/dropwizard.yml
 
 You can also run it with maven from the -service directory::
 
