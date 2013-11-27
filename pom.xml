@@ -8,10 +8,10 @@
     <name>atomizer-dw</name>
     <description>Atomizer - DropWizard version</description>
     <inceptionYear>2008</inceptionYear>
-    <url>https://github.com/amedia/atomizer</url>
+    <url>https://github.com/amedia/atomizer-dw</url>
     <scm>
-        <connection>scm:git:ssh://git@github.com/amedia/atomizer.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/amedia/atomizer.git</developerConnection>
+        <connection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
 
