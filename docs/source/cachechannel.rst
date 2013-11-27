@@ -14,7 +14,8 @@ and **expire objects**. We want something similar to the following in the respon
 The line says the following:
 
 **max-age**
-  The page shall be cached 30 seconds in the browser.
+  The page shall be cached 30 seconds in the browser. This will also be used in caches 
+  that do not listen to events.
 
 **channel**
   Where to listen for updates on the object.
