@@ -29,7 +29,7 @@ import no.api.atomizer.resources.StaleGroupResource;
 import java.net.UnknownHostException;
 
 /**
- *
+ * Main service class. Started from jar, mvn exec:java or within your IDE
  */
 public class AtomizerService extends Service<AtomizerConfiguration> {
     public static void main(String[] args) throws Exception { // NOSONAR Nevermind...
