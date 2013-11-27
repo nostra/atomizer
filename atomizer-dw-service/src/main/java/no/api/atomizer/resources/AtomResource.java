@@ -1,5 +1,7 @@
 package no.api.atomizer.resources;
 
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import no.api.atomizer.core.StaleGroup;
 import no.api.atomizer.exception.AtomizerPathException;
@@ -27,6 +29,7 @@ import java.util.List;
  *
  */
 @Produces(MediaType.APPLICATION_ATOM_XML)
+@Api(value = "/event", description = "Atom XML feed resource. Supplies a window of events.")
 @Path("/event")
 public class AtomResource extends AbstractAtomizerResource {
     private static final String ARCHIVE_SLASH_PREFIX = "archive/";
@@ -37,6 +40,8 @@ public class AtomResource extends AbstractAtomizerResource {
     }
 
     @GET @Path("/{idOrCurrent}")
+    @ApiOperation(value = "Get Atom feed for current window, or from chosen ID",
+            notes = "The parameter can either be \"current\" as static text, or an ID", response = Feed.class)
     @CacheControl(mustRevalidate = true)
     public Feed showFeed(@Context HttpServletRequest req, @PathParam("idOrCurrent") String idOrCurrent) {
         GuiFeed feed = createFeedWithDefaults(req);
@@ -86,6 +91,8 @@ public class AtomResource extends AbstractAtomizerResource {
     }
 
     @GET @Path("/archive/{timestamp}")
+    @ApiOperation(value = "Get Atom feed for indicated window",
+            notes = "The timestamp parameter indicate the start of the window for which to show feed entries", response = Feed.class)
     @CacheControl(mustRevalidate = true)
     public Feed showArchive(@Context HttpServletRequest req, @PathParam("timestamp") String timestamp) {
         GuiFeed feed = createFeedWithDefaults(req);

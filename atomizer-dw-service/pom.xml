@@ -1,18 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <artifactId>atomizer</artifactId>
-        <groupId>no.api.atomizer</groupId>
+        <artifactId>atomizer-dw</artifactId>
+        <groupId>no.api.atomizer-dw</groupId>
         <version>1.0.5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>atomizer-service</artifactId>
-    <name>atomizer-service</name>
+    <artifactId>atomizer-dw-service</artifactId>
+    <name>atomizer-dw-service</name>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>no.api.atomizer</groupId>
-            <artifactId>atomizer-mongodao</artifactId>
+            <groupId>no.api.atomizer-dw</groupId>
+            <artifactId>atomizer-dw-mongodao</artifactId>
         </dependency>
 
         <dependency>
@@ -106,7 +106,7 @@
                     <mainClass>no.api.atomizer.AtomizerService</mainClass>
                     <arguments>
                         <argument>server</argument>
-                        <argument>dropwizard.yml</argument>
+                        <argument>../atomizer-dw-app/src/main/resources/etc/dropwizard.yml</argument>
                     </arguments>
                 </configuration>
             </plugin>

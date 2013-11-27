@@ -1,0 +1,40 @@
+# Configuration defaults:
+# http://dropwizard.codahale.com/manual/core/#configuration-defaults
+
+httpConfiguration:
+  rootPath: /atomizer/*
+  port: 9106
+  adminPort: 19106
+  requestLog:
+    console:
+      enabled: false
+
+#database:
+#  driverClass: com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
+#  user: atomizer
+#  password: pingu123
+#  url: jdbc:mysql://localhost/atomizer?useUnicode=true&amp;characterEncoding=UTF-8
+
+mongo:
+# Hosts are comma-separated: host1,host2,host3...
+  hosts: localhost
+  port: 27017
+  name: atomizer
+#  writeConcern: WriteConcern.NONE
+
+logging:
+  level: INFO
+  loggers:
+    no: INFO
+    no.api.atomizer: DEBUG
+  # Settings for logging to stdout.
+  console:
+    enabled: true
+    logFormat: '%d [%-5p] [%10.10t][%X{app}][%c][%M][%L] - %m%n'
+  file:
+    enabled: true
+    logFormat: '%d [%-5p] [%10.10t][%X{app}][%c][%M][%L] - %m%n'
+    currentLogFilename: /var/log/app/atomizer-dw/atomizer.logz
+    archive: true
+    archivedLogFilenamePattern: ./logs/atomizer-%d.log.gz
+    archivedFileCount: 5
