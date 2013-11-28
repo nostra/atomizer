@@ -15,6 +15,7 @@ import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.views.ViewBundle;
+import no.api.atomizer.amedia.AtomizerPingResource;
 import no.api.atomizer.mongodb.MongodbFactory;
 import no.api.atomizer.mongodb.dao.MetaCounterMongoDao;
 import no.api.atomizer.mongodb.dao.StaleGroupMongoDao;
@@ -59,8 +60,9 @@ public class AtomizerService extends Service<AtomizerConfiguration> {
         environment.addResource(new SearchForGroupResource(staleGroupMongoDao, counterMongoDao));
         environment.addResource(new AtomResource(staleGroupMongoDao));
         environment.addResource(new MetaCounterResource(counterMongoDao));
+        environment.addResource(new AtomizerPingResource(config.getHttpConfiguration().getAdminPort()));
 
-        addSwaggger( environment );
+        addSwaggger(environment);
     }
 
     private void addSwaggger(Environment environment) {
