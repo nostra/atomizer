@@ -30,15 +30,12 @@ public class MongodbHealth extends HealthCheck {
 
     @Override
     protected Result check(){
-        log.info("Checking mongodb");
         DBObject ping = new BasicDBObject("ping", "1");
         try {
             mongodb.command(ping);
         } catch (MongoException e) {
-            log.info("Failed! Returning unhealthy", e);
             return Result.unhealthy(e);
         }
-        log.info("Success! Returning health");
         return Result.healthy();
     }
 }
