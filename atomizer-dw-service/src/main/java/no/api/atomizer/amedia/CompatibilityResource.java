@@ -1,16 +1,20 @@
 package no.api.atomizer.amedia;
 
+import com.thoughtworks.xstream.XStream;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import no.api.atomizer.mongodb.dao.MetaCounterMongoDao;
 import no.api.atomizer.mongodb.dao.StaleGroupMongoDao;
+import no.api.atomizer.transport.CounterHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -37,9 +41,35 @@ public class CompatibilityResource {
     @CacheControl(mustRevalidate = true)
     @Consumes("application/x-www-form-urlencoded")
     @Path("/incrementcounter.xstream")
-    public Response getIndex(@FormParam("payload") String payload, @Context HttpServletRequest req) {
+    public Response incrementCounterFor(@FormParam("payload") String payload, @Context HttpServletRequest req) {
         log.info("Incoming: "+payload);
+        // TODO return real data...
         return Response.ok("<x>whee</x>", MediaType.APPLICATION_XML).build();
     }
+
+    @GET
+    @CacheControl(mustRevalidate = true)
+    @Path("/count/${token}.xstream")
+    public Response counter( @PathParam("token") String token ) {
+        CounterHolder ch = new CounterHolder();
+        ch.setToken(token);
+        ch.setCounter(666);
+        ch.setId(Long.valueOf(666));
+        // TODO return real data...
+        return Response.ok(new XStream().toXML(ch)).build();
+    }
+
+
+    @POST
+    @CacheControl(mustRevalidate = true)
+    @Consumes("application/x-www-form-urlencoded")
+    @Path("/insert.xstream")
+    public Response insert(@FormParam("payload") String payload, @Context HttpServletRequest req) {
+        log.info("Incoming: "+payload);
+        // TODO return real data...
+        return Response.ok("<x>whee</x>", MediaType.APPLICATION_XML).build();
+    }
+
+
 
 }
