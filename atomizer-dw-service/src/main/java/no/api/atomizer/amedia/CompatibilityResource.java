@@ -5,6 +5,7 @@ import com.yammer.dropwizard.jersey.caching.CacheControl;
 import no.api.atomizer.mongodb.dao.MetaCounterMongoDao;
 import no.api.atomizer.mongodb.dao.StaleGroupMongoDao;
 import no.api.atomizer.transport.CounterHolder;
+import no.api.atomizer.transport.StaleGroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +33,8 @@ public class CompatibilityResource {
 
     private final MetaCounterMongoDao counterMongoDao;
 
+    private XStream xstream = new XStream();
+
     public CompatibilityResource(StaleGroupMongoDao staleGroupMongoDao, MetaCounterMongoDao counterMongoDao) {
         this.staleGroupMongoDao = staleGroupMongoDao;
         this.counterMongoDao = counterMongoDao;
@@ -43,8 +46,8 @@ public class CompatibilityResource {
     @Path("/incrementcounter.xstream")
     public Response incrementCounterFor(@FormParam("payload") String payload, @Context HttpServletRequest req) {
         log.info("Incoming: "+payload);
-        // TODO return real data...
-        return Response.ok("<x>whee</x>", MediaType.APPLICATION_XML).build();
+        // TODO perform work
+        return Response.ok().build();
     }
 
     @GET
@@ -56,7 +59,7 @@ public class CompatibilityResource {
         ch.setCounter(666);
         ch.setId(Long.valueOf(666));
         // TODO return real data...
-        return Response.ok(new XStream().toXML(ch)).build();
+        return Response.ok(xstream.toXML(ch)).build();
     }
 
 
@@ -66,8 +69,9 @@ public class CompatibilityResource {
     @Path("/insert.xstream")
     public Response insert(@FormParam("payload") String payload, @Context HttpServletRequest req) {
         log.info("Incoming: "+payload);
+        StaleGroup sg = (StaleGroup) xstream.fromXML(payload);
         // TODO return real data...
-        return Response.ok("<x>whee</x>", MediaType.APPLICATION_XML).build();
+        return Response.ok(xstream.toXML(sg), MediaType.APPLICATION_XML).build();
     }
 
 
