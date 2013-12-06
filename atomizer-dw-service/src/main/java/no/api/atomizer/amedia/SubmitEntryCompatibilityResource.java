@@ -31,6 +31,7 @@ public class SubmitEntryCompatibilityResource {
     public String getIndex(@FormParam("path") String path) {
         log.debug("Got incoming path: "+path);
         StaleGroup sg = new StaleGroup();
+        sg.setPath(path);
         staleGroupMongoDao.insert(sg);
         return "ok";
     }
