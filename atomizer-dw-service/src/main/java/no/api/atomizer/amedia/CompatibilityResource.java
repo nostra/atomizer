@@ -70,8 +70,17 @@ public class CompatibilityResource {
         return Response.ok(xstream.toXML(ch)).build();
     }
 
+    /**
+     * Never answering true about if a publication is locked
+     */
+    @GET
+    @CacheControl(mustRevalidate = true)
+    @Path("/islocked/{pubId}.xstream")
+    public Response isLocked(@PathParam("pubId") String pubId) {
+        return Response.ok(xstream.toXML(Boolean.FALSE)).build();
+    }
 
-    @POST
+        @POST
     @CacheControl(mustRevalidate = true)
     @Consumes("application/x-www-form-urlencoded")
     @Path("/insert.xstream")
@@ -89,7 +98,6 @@ public class CompatibilityResource {
         return internal;
     }
 /*
-/atomizer/rest/islocked/577907.xstream
 /atomizer/submitEntry.html?path=%2Fsec86 HTTP/1.1" 302 0 "-" "ecerenovator/1.0"
 /atomizer/pathlist.html HTTP/1.1" 200 5715 "-" "ecerenovator/1.0"
 /atomizer/rest/insert.xstream
