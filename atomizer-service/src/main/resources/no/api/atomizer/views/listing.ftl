@@ -12,7 +12,7 @@
         <#list feed.entries as entry>
             <tr>
                 <td><a href="event/${entry.id}">
-                    <#list entry.links as link>${link}</#list>
+                    <#list entry.links as link>${link!}</#list>
                 </td>
                 <td>${entry.updated?datetime}</td>
                 <td>${entry.age}</td>
