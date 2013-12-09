@@ -7,7 +7,16 @@ httpConfiguration:
   adminPort: 9306
   requestLog:
     console:
-      enabled: false
+      enabled: false  
+    file:
+      enabled: true
+      # A custom Logback format string.
+      logFormat: null
+      currentLogFilename: /var/log/app/atomizer-dw/request.logz
+      archive: true
+      archivedLogFilenamePattern: /var/log/app/atomizer-dw/request-%d.log.gz
+      archivedFileCount: 5
+
 
 #database:
 #  driverClass: com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource
