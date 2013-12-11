@@ -294,11 +294,11 @@
 
 
     <modules>
-        <module>atomizer-dw-functionality</module>
-        <module>atomizer-dw-api</module>
-        <module>atomizer-dw-mongodao</module>
-        <module>atomizer-dw-service</module>
-        <module>atomizer-dw-app</module>
+        <module>atomizer-functionality</module>
+        <module>atomizer-api</module>
+        <module>atomizer-mongodao</module>
+        <module>atomizer-service</module>
+        <module>atomizer-app</module>
     </modules>
 
 
