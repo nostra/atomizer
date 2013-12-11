@@ -2,7 +2,7 @@
     <parent>
         <artifactId>atomizer-dw</artifactId>
         <groupId>no.api.atomizer-dw</groupId>
-        <version>1.0.8-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>atomizer-dw-mongodao</artifactId>
