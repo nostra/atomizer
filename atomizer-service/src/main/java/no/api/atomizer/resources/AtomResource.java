@@ -80,7 +80,7 @@ public class AtomResource extends AbstractAtomizerResource {
             Entry entry = feed.addEntry();
             entry.setId(gui.getId()+guientry.getId());
             entry.setTitle("stale");
-            entry.setUpdated(entry.getUpdated());
+            entry.setUpdated(guientry.getUpdated());
             for ( String link : guientry.getLinks()) {
                 entry.addLink(link);
             }
