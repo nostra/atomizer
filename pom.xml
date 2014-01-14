@@ -10,7 +10,7 @@
     <groupId>no.api.atomizer-dw</groupId>
     <artifactId>atomizer-dw</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.6</version>
     <name>atomizer-dw</name>
     <description>Atomizer - DropWizard version</description>
     <inceptionYear>2008</inceptionYear>
@@ -18,7 +18,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>atomizer-dw-1.0.6</tag>
   </scm>
 
     <properties>
