@@ -5,7 +5,6 @@ import com.yammer.dropwizard.jersey.caching.CacheControl;
 import no.api.atomizer.mongodb.dao.MetaCounterMongoDao;
 import no.api.atomizer.mongodb.dao.StaleGroupMongoDao;
 import no.api.atomizer.transport.CounterHolder;
-import no.api.atomizer.transport.StaleGroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
