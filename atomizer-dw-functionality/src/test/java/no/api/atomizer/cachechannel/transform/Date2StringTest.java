@@ -1,7 +1,5 @@
 package no.api.atomizer.cachechannel.transform;
 
-import org.junit.Test;
-
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
@@ -11,7 +9,6 @@ import static org.junit.Assert.assertTrue;
  *
  */
 public class Date2StringTest {
-    @Test
     public void testTransformDateToString() {
         Date now = new Date();
         String dtext = Date2String.transformDateToRfc1123String(now);
