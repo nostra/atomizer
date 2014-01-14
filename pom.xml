@@ -157,12 +157,6 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${springframework.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -318,10 +312,6 @@
                     <exclusion>
                         <groupId>jaxen</groupId>
                         <artifactId>jaxen</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
