@@ -27,6 +27,8 @@ public class AtomizerPingResource {
 
     private static final long CHECK_INTERVAL = 20 * 1000;
 
+    private int spool = 0;
+
     private final int adminPort;
 
     private final String version;
@@ -55,11 +57,10 @@ public class AtomizerPingResource {
         currentlyTesting = true;
         nextCheck = System.currentTimeMillis() + CHECK_INTERVAL;
 
-        HttpURLConnection conn = null;
         try {
             URL local = new URL("http://localhost:"+adminPort+"/healthcheck");
-            log.debug("Trying to read contents from " + local);
-            conn = (HttpURLConnection) local.openConnection();
+            log.debug("Trying to read contents from "+local);
+            HttpURLConnection conn = (HttpURLConnection) local.openConnection();
             conn.setReadTimeout(5000);
             int responseCode = conn.getResponseCode();
             if ( responseCode == HttpURLConnection.HTTP_OK ) {
@@ -73,11 +74,6 @@ public class AtomizerPingResource {
             reason = "Got some kind of trouble "+e;
         } finally {
             currentlyTesting = false;
-            if ( conn != null ) {
-                try {
-                    conn.disconnect();
-                } catch (Exception ignored ) {}
-            }
         }
 
         return resultByReason();
