@@ -4,7 +4,7 @@
 httpConfiguration:
   rootPath: /atomizer/*
   port: 9106
-  adminPort: 9306
+  adminPort: 19106
   requestLog:
     console:
       enabled: false
