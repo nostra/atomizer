@@ -7,6 +7,7 @@ import no.api.atomizer.mongodb.dao.MetaCounterMongoDao;
 import no.api.atomizer.mongodb.dao.StaleGroupMongoDao;
 import no.api.atomizer.transport.CounterHolder;
 import no.api.atomizer.transport.StaleGroup;
+import no.api.atomizer.transport.StaleGroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,8 +46,8 @@ public class CompatibilityResource {
     @CacheControl(mustRevalidate = true)
     @Consumes("application/x-www-form-urlencoded")
     @Path("/incrementcounter.xstream")
-    public Response incrementCounterFor(@FormParam("payload") String payload) {
-        counterMongoDao.incrementCounterFor((String) xstream.fromXML(payload));
+    public Response incrementCounterFor(@FormParam("payload") String payload, @Context HttpServletRequest req) {
+        counterMongoDao.incrementCounterFor(xstream.fromXML(payload));
         return Response.ok().build();
     }
 
@@ -66,7 +67,8 @@ public class CompatibilityResource {
         CounterHolder ch = new CounterHolder();
         ch.setToken(counter.getToken());
         ch.setCounter(counter.getCounter());
-        ch.setId(Long.valueOf(666)); // Fake ID
+        ch.setId(Long.valueOf(666));
+        // TODO return real data...
         return Response.ok(xstream.toXML(ch)).build();
     }
 
