@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>no.api.atomizer-dw</groupId>
-    <artifactId>atomizer-dw</artifactId>
+    <groupId>no.api.atomizer</groupId>
+    <artifactId>atomizer</artifactId>
     <packaging>pom</packaging>
     <version>1.0.5-SNAPSHOT</version>
-    <name>atomizer-dw</name>
+    <name>atomizer</name>
     <description>Atomizer - DropWizard version</description>
     <inceptionYear>2008</inceptionYear>
-    <url>https://github.com/amedia/atomizer-dw</url>
+    <url>https://github.com/amedia/atomizer</url>
     <scm>
-        <connection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</developerConnection>
+        <connection>scm:git:ssh://git@github.com/amedia/atomizer.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/amedia/atomizer.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
 
@@ -26,7 +26,6 @@
         <jackson.version>2.2.3</jackson.version>
         <slf4j.version>1.7.5</slf4j.version>
         <javax.servlet.version>3.0.1</javax.servlet.version>
-        <swagger.version>1.3.0</swagger.version>
     </properties>
 
     <distributionManagement>
@@ -129,18 +128,18 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>no.api.atomizer-dw</groupId>
-                <artifactId>atomizer-dw-api</artifactId>
+                <groupId>no.api.atomizer</groupId>
+                <artifactId>atomizer-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.atomizer-dw</groupId>
-                <artifactId>atomizer-dw-service</artifactId>
+                <groupId>no.api.atomizer</groupId>
+                <artifactId>atomizer-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.atomizer-dw</groupId>
-                <artifactId>atomizer-dw-mongodao</artifactId>
+                <groupId>no.api.atomizer</groupId>
+                <artifactId>atomizer-mongodao</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -162,17 +161,6 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${javax.servlet.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.wordnik</groupId>
-                <artifactId>swagger-jaxrs_2.10</artifactId>
-                <version>${swagger.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>javax.ws.rs</groupId>
-                        <artifactId>jsr311-api</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.h2database</groupId>
@@ -320,11 +308,10 @@
 
 
     <modules>
-        <module>atomizer-dw-functionality</module>
-        <module>atomizer-dw-api</module>
-        <module>atomizer-dw-mongodao</module>
-        <module>atomizer-dw-service</module>
-        <module>atomizer-dw-app</module>
+        <module>atomizer-functionality</module>
+        <module>atomizer-api</module>
+        <module>atomizer-mongodao</module>
+        <module>atomizer-service</module>
     </modules>
 
     <reporting>
