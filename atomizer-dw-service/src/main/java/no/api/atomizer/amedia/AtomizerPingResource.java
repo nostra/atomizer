@@ -81,8 +81,10 @@ public class AtomizerPingResource {
 
     private Response resultByReason() {
         if ( reason == null ) {
+            log.info("returning OK");
             return Response.ok("ok "+version, MediaType.TEXT_PLAIN_TYPE).status(new OkStatus("ok "+version)).build();
         }
+        log.info("returning failure; "+reason.substring(0, Math.min(25, reason.length())));
         return Response.ok(reason, MediaType.TEXT_PLAIN_TYPE).status(500).build();
     }
 
