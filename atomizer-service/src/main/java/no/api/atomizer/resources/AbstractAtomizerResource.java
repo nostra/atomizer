@@ -17,7 +17,7 @@ import java.util.List;
 /**
  *
  */
-public abstract class AbstractAtomizerResource {
+public class AbstractAtomizerResource {
     private static final Logger log = LoggerFactory.getLogger(AbstractAtomizerResource.class);
 
     private final StaleGroupMongoDao dao;
