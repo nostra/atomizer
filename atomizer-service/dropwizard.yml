@@ -2,8 +2,8 @@
 # http://dropwizard.codahale.com/manual/core/#configuration-defaults
 
 httpConfiguration:
-  rootPath: /atomizer/*
-  port: 9006
+  rootPath: /atomizer-dw/*
+  port: 9106
   adminPort: 9306
   requestLog:
     console:
@@ -12,9 +12,9 @@ httpConfiguration:
       enabled: true
       # A custom Logback format string.
       logFormat: null
-      currentLogFilename: /var/log/app/atomizer/request.logz
+      currentLogFilename: /var/log/app/atomizer-dw/request.logz
       archive: true
-      archivedLogFilenamePattern: /var/log/app/atomizer/request-%d.log.gz
+      archivedLogFilenamePattern: /var/log/app/atomizer-dw/request-%d.log.gz
       archivedFileCount: 5
 
 
@@ -43,7 +43,7 @@ logging:
   file:
     enabled: true
     logFormat: '%d [%-5p] [%10.10t][%X{app}][%c][%M][%L] - %m%n'
-    currentLogFilename: /var/log/app/atomizer/atomizer.logz
+    currentLogFilename: /var/log/app/atomizer-dw/atomizer.logz
     archive: true
-    archivedLogFilenamePattern: /var/log/app/atomizer/atomizer-%d.log.gz
+    archivedLogFilenamePattern: /var/log/app/atomizer-dw/atomizer-%d.log.gz
     archivedFileCount: 5

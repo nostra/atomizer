@@ -41,7 +41,7 @@ public class AtomizerService extends Service<AtomizerConfiguration> {
 
     @Override
     public void initialize(Bootstrap<AtomizerConfiguration> bootstrap) {
-        String rootAndName = "atomizer";
+        String rootAndName = "atomizer-dw";
         bootstrap.setName(rootAndName );
         bootstrap.addBundle(new ViewBundle());
         bootstrap.addBundle(new AssetsBundle("/assets/js", "/"+rootAndName +"/js"));

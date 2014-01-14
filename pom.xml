@@ -7,17 +7,17 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>no.api.atomizer</groupId>
-    <artifactId>atomizer</artifactId>
+    <groupId>no.api.atomizer-dw</groupId>
+    <artifactId>atomizer-dw</artifactId>
     <packaging>pom</packaging>
     <version>1.1.0-SNAPSHOT</version>
-    <name>atomizer</name>
+    <name>atomizer-dw</name>
     <description>Atomizer - DropWizard version</description>
     <inceptionYear>2008</inceptionYear>
-    <url>https://github.com/amedia/atomizer</url>
+    <url>https://github.com/amedia/atomizer-dw</url>
     <scm>
-        <connection>scm:git:ssh://git@github.com/amedia/atomizer.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/amedia/atomizer.git</developerConnection>
+        <connection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/amedia/atomizer-dw.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
 
@@ -39,18 +39,18 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>no.api.atomizer</groupId>
-                <artifactId>atomizer-api</artifactId>
+                <groupId>no.api.atomizer-dw</groupId>
+                <artifactId>atomizer-dw-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.atomizer</groupId>
-                <artifactId>atomizer-service</artifactId>
+                <groupId>no.api.atomizer-dw</groupId>
+                <artifactId>atomizer-dw-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.atomizer</groupId>
-                <artifactId>atomizer-mongodao</artifactId>
+                <groupId>no.api.atomizer-dw</groupId>
+                <artifactId>atomizer-dw-mongodao</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
