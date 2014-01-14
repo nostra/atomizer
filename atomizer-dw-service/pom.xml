@@ -21,11 +21,6 @@
         </dependency>
 
         <dependency>
-            <groupId>no.api.atomizer</groupId>
-            <artifactId>atomizer-director-provider</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.yammer.dropwizard</groupId>
             <artifactId>dropwizard-testing</artifactId>
             <scope>test</scope>
