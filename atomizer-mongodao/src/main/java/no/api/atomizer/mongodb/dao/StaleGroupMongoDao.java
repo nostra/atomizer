@@ -149,7 +149,7 @@ public final class StaleGroupMongoDao {
         List<StaleGroup> result = collection.find(DBQuery
                 .lessThan("updated", updtToBeLessThan))
                 .sort(DBSort.desc("updated"))
-                .toArray();
+                .limit(1).toArray();
         if ( !result.isEmpty()) {
             return Long.valueOf(result.get(0).getUpdated());
         }
