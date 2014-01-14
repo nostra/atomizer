@@ -2,7 +2,7 @@
 # http://dropwizard.codahale.com/manual/core/#configuration-defaults
 
 httpConfiguration:
-  rootPath: /atomizer-dw/*
+  rootPath: /atomizer/*
   port: 9106
   adminPort: 9306
   requestLog:
@@ -36,5 +36,5 @@ logging:
     logFormat: '%d [%-5p] [%10.10t][%X{app}][%c][%M][%L] - %m%n'
     currentLogFilename: /var/log/app/atomizer-dw/atomizer.logz
     archive: true
-    archivedLogFilenamePattern: /var/log/app/atomizer-dw/atomizer-%d.log.gz
+    archivedLogFilenamePattern: ./logs/atomizer-%d.log.gz
     archivedFileCount: 5
