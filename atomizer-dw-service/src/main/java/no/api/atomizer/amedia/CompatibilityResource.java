@@ -97,4 +97,21 @@ public class CompatibilityResource {
         internal.setPath(sg.getPath());
         return internal;
     }
+/*
+/atomizer/submitEntry.html?path=%2Fsec86 HTTP/1.1" 302 0 "-" "ecerenovator/1.0"
+/atomizer/pathlist.html HTTP/1.1" 200 5715 "-" "ecerenovator/1.0"
+/atomizer/rest/insert.xstream
+/atomizer/submitEntry.html?path=/zad2551940
+
+/atomizer/pathlist.html
+/atomizer/rest/count/jawrcounter.xstream
+/atomizer/rest/islocked/101.xstream
+/atomizer/submitEntry.html?path=%2Fart1931650
+/atomizer/submitEntry.html?path=/zcm3028621
+/atomizer/rest/insert.xstream
+/atomizer/submitEntry.html
+
+ */
+
+
 }

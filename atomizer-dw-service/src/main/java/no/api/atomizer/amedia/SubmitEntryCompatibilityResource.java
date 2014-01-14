@@ -7,11 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -30,7 +28,7 @@ public class SubmitEntryCompatibilityResource {
 
     @POST
     @CacheControl(mustRevalidate = true)
-    public String postSubmitEntry(@FormParam("path") String path) {
+    public String getIndex(@FormParam("path") String path) {
         log.debug("Got incoming path: "+path);
         StaleGroup sg = new StaleGroup();
         sg.setPath(path);
@@ -38,10 +36,4 @@ public class SubmitEntryCompatibilityResource {
         return "ok";
     }
 
-    @GET
-    @CacheControl(mustRevalidate = true)
-    public String getSubmitEntry(@QueryParam("path") String path) {
-        log.debug("Got incoming path: "+path);
-        return postSubmitEntry(path);
-    }
 }
